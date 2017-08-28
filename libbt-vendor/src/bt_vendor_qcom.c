@@ -68,7 +68,7 @@ extern int chipset_ver;
 **  Variables
 ******************************************************************************/
 struct bt_qcom_struct *q = NULL;
-pthread_mutex_t q_lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t q_lock = PTHREAD_RECURSIVE_MUTEX_INITIALIZER_NP;
 
 int userial_clock_operation(int fd, int cmd);
 int ath3k_init(int fd, int speed, int init_speed, char *bdaddr, struct termios *ti);
